@@ -269,9 +269,9 @@ main {
 /* --- HERO SECTION (Matching the reference photo) --- */
 .hero-image img {
     width: 380px;
-    height: 380px; /* Make height equal to width for a perfect circle */
+    height: 480px; /* Restored to the taller height */
     object-fit: cover;
-    border-radius: 50%; /* This makes it a perfect circle */
+    border-radius: 200px 200px 0 0; /* Restored the arch shape */
     border: 2px solid var(--border-subtle);
 }
 
