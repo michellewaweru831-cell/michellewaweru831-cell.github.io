@@ -1,21 +1,21 @@
 /* --- COLOR PALETTE (Pure Black & White) --- */
 :root {
     /* Backgrounds */
-    --bg-main: #000000;          /* Pure Black throughout */
-    --bg-darker: #0a0a0a;        /* Very dark gray for alternating sections */
-    --bg-card: #111111;          /* Dark gray for cards */
-    --bg-header: rgba(0, 0, 0, 0.9); /* Black transparent header */
+    --bg-main: #000000;          
+    --bg-darker: #0a0a0a;        
+    --bg-card: #111111;          
+    --bg-header: rgba(0, 0, 0, 0.9); 
 
     /* Accents (Muted Burgundy) */
     --accent: #8b2a3c;           
     --accent-hover: #a3354a;     
     
     /* Text */
-    --text-main: #ffffff;        /* Pure White for headings */
-    --text-muted: #d1d5db;       /* Light gray for paragraphs */
+    --text-main: #ffffff;        
+    --text-muted: #d1d5db;       
 
     /* Borders */
-    --border-subtle: #333333;    /* Dark gray borders */
+    --border-subtle: #333333;    
 }
 
 /* --- RESET & GLOBALS --- */
@@ -94,28 +94,6 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-}
-
-/* --- CONTACT BUTTON (Updated to remove white background) --- */
-.Contant {
-    padding: 10px 24px;
-    background: transparent;      /* Transparent background */
-    color: var(--text-main);      /* White text */
-    border: 1px solid var(--border-subtle); /* Subtle gray border */
-    border-radius: 6px;
-    font-size: 15px;
-    font-weight: 600;
-    transition: all 0.3s ease;            
-    cursor: pointer;
-    margin-left: 15px;            
-}
-
-.Contant:hover, 
-.Contant:active, 
-.Contant:focus {
-    background: var(--accent);    /* Turns burgundy on hover */
-    border-color: var(--accent);  
-    color: #ffffff;               
 }
 
 /* --- MAIN LAYOUT & SECTIONS --- */
@@ -266,13 +244,14 @@ main {
     color: var(--accent);
 }
 
-/* --- HERO SECTION (Matching the reference photo) --- */
-.hero-image img {
-    width: 380px;
-    height: 480px; /* Restored to the taller height */
-    object-fit: cover;
-    border-radius: 200px 200px 0 0; /* Restored the arch shape */
-    border: 2px solid var(--border-subtle);
+/* --- HERO SECTION --- */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px; 
+    min-height: 90vh;
+    padding-top: 120px; 
 }
 
 .hero-image {
@@ -282,10 +261,10 @@ main {
 }
 
 .hero-image img {
-    width: 380px;
-    height: 480px;
+    width: 350px;
+    height: 350px; 
     object-fit: cover;
-    border-radius: 200px 200px 0 0; 
+    border-radius: 50%; /* PERFECT CIRCLE */
     border: 2px solid var(--border-subtle);
 }
 
@@ -318,51 +297,38 @@ main {
     margin-bottom: 35px;
 }
 
-.hero-btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: var(--bg-card);
-    color: var(--text-main);
-    border: 1px solid var(--border-subtle);
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.hero-btn:hover {
-    background-color: var(--accent);
-    border-color: var(--accent);
-    color: #ffffff;
-}
-
-/* ========================================= */
 /* --- MOBILE RESPONSIVENESS --- */
-/* ========================================= */
-
 @media (max-width: 992px) {
     .hero-section {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
-        padding-top: 140px;
+        flex-direction: row; /* Forces side-by-side */
+        text-align: left;
+        gap: 20px; 
+        padding-top: 120px;
     }
 
     .hero-image {
-        justify-content: center;
+        justify-content: flex-end;
     }
     
     .hero-image img {
-        width: 300px;
-        height: 380px;
+        width: 130px;  /* Smaller circle for mobile */
+        height: 130px;
     }
 
     .hero-content {
-        align-items: center; 
+        align-items: flex-start; 
     }
 
     .hero-name {
-        font-size: 40px;
+        font-size: 28px; 
+    }
+
+    .hero-title {
+        font-size: 14px;
+    }
+
+    .hero-desc {
+        font-size: 12px;
     }
 }
 
@@ -397,12 +363,6 @@ main {
         font-size: 18px;
         display: block;
         text-align: center;
-    }
-
-    .Contant {
-        display: inline-block;
-        margin-top: 10px;
-        margin-left: 0;
     }
 
     main {
