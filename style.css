@@ -267,13 +267,12 @@ main {
 }
 
 /* --- HERO SECTION (Matching the reference photo) --- */
-.hero-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 80px; 
-    min-height: 90vh;
-    padding-top: 120px; 
+.hero-image img {
+    width: 380px;
+    height: 380px; /* Make height equal to width for a perfect circle */
+    object-fit: cover;
+    border-radius: 50%; /* This makes it a perfect circle */
+    border: 2px solid var(--border-subtle);
 }
 
 .hero-image {
